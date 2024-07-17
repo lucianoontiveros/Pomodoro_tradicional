@@ -1,0 +1,103 @@
+.pomodoro-app {
+  background: url("C:\Users\lucia\Documents\14 TIMERPARAYOUTUBE\src\assets\moon.jpeg")
+    no-repeat center center;
+  background-size: 150%;
+  opacity: 0.8; /* Ajusta la opacidad según sea necesario */
+  z-index: -1;
+  color: aliceblue;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  align-content: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.timer-container {
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.timer {
+  margin-bottom: 10px;
+}
+
+.timer-label {
+  border: solid white;
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.time-left {
+  font-size: 5em;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+button {
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #131212;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 5px 0px 5px;
+}
+
+button:hover {
+  background-color: #0fb5f2;
+}
+
+.pomo-stats {
+  max-height: 50px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.panel {
+  align-content: center;
+}
+
+.panel span {
+  font-size: 20px;
+  margin: 0;
+}
+
+.pomo_bar {
+  margin: 0;
+  font-size: 40px;
+}
+
+.pomo_stats {
+  text-align: right;
+  margin: 0;
+  font-size: 40px;
+  max-width: 70px;
+}
+
+.no-style {
+  all: initial;
+  max-width: 80px;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  font-size: 40px;
+}
