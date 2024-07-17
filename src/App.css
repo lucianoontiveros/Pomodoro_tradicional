@@ -1,6 +1,5 @@
 .pomodoro-app {
-  background: url("C:\Users\lucia\Documents\14 TIMERPARAYOUTUBE\src\assets\moon.jpeg")
-    no-repeat center center;
+  background: url("./assets/moon.jpeg") no-repeat center center;
   background-size: 150%;
   opacity: 0.8; /* Ajusta la opacidad según sea necesario */
   z-index: -1;
