@@ -1,7 +1,7 @@
 .pomodoro-app {
-  background: url("./assets/moon.jpeg") no-repeat center center;
-  background-size: 150%;
-  opacity: 0.8; /* Ajusta la opacidad según sea necesario */
+  background: url("./assets/moon_3.webp") no-repeat bottom center;
+  background-size: 120%;
+  opacity: 0.9; /* Ajusta la opacidad según sea necesario */
   z-index: -1;
   color: aliceblue;
   display: flex;
@@ -57,7 +57,7 @@ button {
 }
 
 button:hover {
-  background-color: #0fb5f2;
+  background-color: #1aff3c;
 }
 
 .pomo-stats {

@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
+import Icon_play from "./assets/icons/Icon_play";
+import Icon_pause from "./assets/icons/Icon_pause";
+import Icon_reset from "./assets/icons/Icon_reset";
+import Icon_sw from "./assets/icons/Icon_sw";
 
 const App = () => {
   const [mode, setMode] = useState("productivo"); // 'productivo' o 'descanso'
@@ -103,7 +107,7 @@ const App = () => {
         </div>
         <span>
           {pomosCompleted === totalPomos && totalPomos !== 0
-            ? "Fin de jornada"
+            ? "HAZ TERMINADO"
             : "POMODOROS"}
         </span>
         <div className="controls">
@@ -111,19 +115,19 @@ const App = () => {
             className="astronaut-button"
             onClick={startStopTimer}
           >
-            {isRunning ? "S" : "P"}
+            {isRunning ? <Icon_pause /> : <Icon_play />}
           </button>
           <button
             className="astronaut-button"
             onClick={resetTimer}
           >
-            R
+            <Icon_reset />
           </button>
           <button
             className="astronaut-button"
             onClick={switchMode}
           >
-            sw
+            <Icon_sw />
           </button>
         </div>
       </div>
