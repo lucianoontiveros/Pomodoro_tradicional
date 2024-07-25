@@ -1,5 +1,5 @@
 .pomodoro-app {
-  background: url("./assets/moon_3.webp") no-repeat bottom center;
+  background: url("./assets/fondo.webp") no-repeat bottom center;
   background-size: 120%;
   opacity: 0.9; /* Ajusta la opacidad según sea necesario */
   z-index: -1;
@@ -57,7 +57,7 @@ button {
 }
 
 button:hover {
-  background-color: #1aff3c;
+  background-color: #d81290;
 }
 
 .pomo-stats {
