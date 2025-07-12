@@ -20,16 +20,21 @@ const App = () => {
   };
 
   // Cambiar entre modo 'productivo' y 'descanso'
-  const switchMode = () => {
+  const switchMode = (completedPomo = false) => {
     if (mode === "productivo") {
+      // Contar el pomodoro completado al finalizar el tiempo productivo
+      if (completedPomo) {
+        setPomosCompleted(prev => prev + 1);
+      }
+      // Cambiar a modo descanso (5 minutos)
       setMode("descanso");
-      setTimeLeft(5 * 60); // 5 minutos en segundos
-      playSound("/Sonido_break.mp3"); // Ruta del archivo de sonido para el descanso
+      setTimeLeft(5 * 60);
+      playSound("/Sonido_break.mp3");
     } else {
+      // Cambiar a modo productivo (25 minutos)
       setMode("productivo");
-      setTimeLeft(25 * 60); // 25 minutos en segundos
-      setPomosCompleted(pomosCompleted + 1);
-      playSound("/Sonido_productivo.mp3"); // Ruta del archivo de sonido para el tiempo productivo
+      setTimeLeft(25 * 60);
+      playSound("/Sonido_productivo.mp3");
     }
   };
 
@@ -57,16 +62,25 @@ const App = () => {
         setTimeLeft((prevTime) => prevTime - 1);
       }, 1000);
     } else if (timeLeft === 0) {
-      switchMode();
-    }
-
-    if (pomosCompleted === totalPomos && totalPomos !== 0) {
-      setIsRunning(false);
+      const isProductiveMode = mode === 'productivo';
+      const isLastPomo = pomosCompleted + (isProductiveMode ? 1 : 0) >= totalPomos && totalPomos !== 0;
+      
+      if (isLastPomo) {
+        // Si es el último pomodoro y estamos en modo productivo
+        if (isProductiveMode) {
+          setPomosCompleted(prev => prev + 1);
+        }
+        // Detener el temporizador al completar todos los pomodoros
+        setIsRunning(false);
+      } else {
+        // Continuar con el siguiente modo
+        switchMode(isProductiveMode);
+      }
     }
 
     // Limpiar el intervalo cuando el componente se desmonta o el temporizador se detiene
     return () => clearInterval(interval);
-  }, [isRunning, timeLeft, pomosCompleted, totalPomos]);
+  }, [isRunning, timeLeft, pomosCompleted, totalPomos, mode]);
 
   // Manejar el cambio en el número total de pomodoros
   const handleTotalPomosChange = (event) => {
